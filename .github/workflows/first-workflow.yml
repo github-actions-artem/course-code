@@ -13,3 +13,21 @@ jobs:
         run: |
           node -v
           npm -v
+
+  parallel-job:
+    runs-on: macos-latest
+    steps:
+      - name: macOs job
+        run: |
+          git -v
+
+  depend-job:
+    needs: parallel-job
+    runs-on: windows-latest
+    steps:
+      - name: echo a String
+        run: Write-Output "Windows String"
+      - name: Error step
+        run: exit 1
+
+  
