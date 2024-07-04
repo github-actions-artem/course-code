@@ -2,6 +2,11 @@ name: Working with dirs and shells
 
 on:
   push:
+
+defaults:
+  run:
+    shell: bash
+    # working-directory: mypath
     
 jobs:
   display-wd-info:
@@ -16,6 +21,9 @@ jobs:
           echo $GITHUB_WORKSPACE
 
   display-wd-info-win:
+    defaults:
+      run:
+        shell: pwsh
     runs-on: windows-latest
     steps:
       - name: Work dir
@@ -25,3 +33,6 @@ jobs:
           echo $env:GITHUB_SHA
           echo $env:GITHUB_REPOSITORY
           echo $env:GITHUB_WORKSPACE
+      - name: python step
+        shell: python
+        run: print('Hello World!')
