@@ -28,6 +28,6 @@ jobs:
       - name: echo a String
         run: Write-Output "Windows String"
       - name: Error step
-        run: exit 1
+        run: exit 1 
 
   
