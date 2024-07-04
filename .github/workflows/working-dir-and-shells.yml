@@ -20,8 +20,8 @@ jobs:
     steps:
       - name: Work dir
         run: |
-          pwd
-          ls -la
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
+          Get-Location
+          dir 
+          echo $env:GITHUB_SHA
+          echo $env:GITHUB_REPOSITORY
+          echo $env:GITHUB_WORKSPACE
