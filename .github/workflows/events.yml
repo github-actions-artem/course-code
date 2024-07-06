@@ -3,9 +3,13 @@ name: Repository events
 on:
   push:
   pull_request:
+    types:
+      - assigned
+      - closed
   issues:
+    types:
+      - closed
     
-
 jobs:
   checkout-test:
     runs-on: ubuntu-latest
