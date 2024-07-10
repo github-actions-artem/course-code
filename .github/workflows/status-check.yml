@@ -10,10 +10,11 @@ jobs:
     steps:
       - name: Step 1
         run: sleep 20
-      - name: Fail on purpose
+      - name: Fail-on-purpose
+        id: fail
         run: exit 1
       - name: Runs on failure
-        if: failure()
+        if: failure() && steps.Fail-on-purpose.conclusion == 'failure'
         run: echo 'Runs only on failure'
       - name: Always runs
         if: always()
