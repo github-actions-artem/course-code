@@ -1,0 +1,12 @@
+name: Manually Triggered
+
+on:
+  workflow_dispatch:
+
+jobs:
+  log-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Show ref $GITHUB_REF"
+  

@@ -2,9 +2,15 @@ name: Repository Events
 
 on:
   push:
+    branches:
+      - main
+      - 'feature/*'
   pull_request:
     types:
       - assigned
+      - closed
+  issues:
+    types:
       - closed
     
 jobs:
