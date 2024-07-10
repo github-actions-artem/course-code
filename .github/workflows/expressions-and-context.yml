@@ -7,6 +7,13 @@ on:
   workflow_dispatch:
   
 jobs:
+  new-job:
+    runs-on: ubuntu-latest
+    if: contains(fromJSON('["issues", "pull_request"]'), github.event_name)
+    steps:
+      - name: Run only on some labels
+        if: contains(github.event.issue.labels.*.name, 'zalupa')
+        run: echo ${{ join(github.event.issue.labels.*.name, ', ')}}
   using-ex-and-con:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
