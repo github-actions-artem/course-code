@@ -9,6 +9,7 @@ on:
 jobs:
   using-ex-and-con:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     steps:
       - name: Expressions
         id: expressions
@@ -17,4 +18,5 @@ jobs:
           echo '${{ toJSON(job) }}'
           echo '${{ toJSON(secrets) }}'
           echo '${{ toJSON(steps) }}'
+          echo '${{ toJSON(runner) }}'
           
