@@ -6,9 +6,6 @@ on:
     types:
       - assigned
       - closed
-  issues:
-    types:
-      - closed
     
 jobs:
   checkout-test:
