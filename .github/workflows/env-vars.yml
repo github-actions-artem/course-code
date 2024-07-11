@@ -31,8 +31,8 @@ jobs:
             echo "asshole" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
             echo "NOT_JOKE<<$DELIMETER" >> $GITHUB_ENV
-            curl -sH "Accept: application/json" https://icanhazdadjoke.com/
-            echo " " >> $GITHUB_ENV
+            curl -s "Accept: application/json" https://icanhazdadjoke.com/
+            echo "" >> $GITHUB_ENV
             echo "$DELIMETER" >> $GITHUB_ENV
       - name: Log Custom ENV Vars
         env:
